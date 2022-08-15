@@ -1,34 +1,29 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
-import {ConfigService, IOwner} from './service/config.service';
-import {Subscription} from 'rxjs';
+import { Component, OnInit, OnDestroy } from "@angular/core";
+import { ConfigService } from "./service/config.service";
+import { Observable, Subscription } from "rxjs";
 
 @Component({
-    selector: 'app-root',
-    templateUrl: './app.component.html',
-    styleUrls: ['./app.component.css'],
+  selector: "app-root",
+  templateUrl: "./app.component.html",
+  styleUrls: ["./app.component.css"],
 })
 export class AppComponent implements OnInit, OnDestroy {
-    title = 'clean-ng-cli813';
+  title = "clean-ng-cli813";
 
-    subscription = Subscription.EMPTY;
+  subscription = Subscription.EMPTY;
 
-    data: IOwner[];
-    error = false;
+  greeting: string;
 
-    constructor(private configService: ConfigService) {
-    }
+  constructor(private configService: ConfigService) {}
 
-    ngOnInit() {
-        this.subscription = this.configService.getGreeting().subscribe(
-            (data: any) => (this.data = data),
-            (error) => {
-                error = true;
-                console.error(error);
-            }
-        );
-    }
+  ngOnInit() {
+    this.subscription = this.configService.getGreeting().subscribe(
+      (data: string) => (this.greeting = data),
+      (error) => (this.greeting = `backend hasn't been deployed yet`)
+    );
+  }
 
-    ngOnDestroy() {
-        this.subscription.unsubscribe();
-    }
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
+  }
 }

@@ -1,21 +1,18 @@
-import {BrowserModule} from '@angular/platform-browser';
-import {NgModule} from '@angular/core';
-import {HttpClientModule} from '@angular/common/http';
-import {AppComponent} from './app.component';
-import {ConfigService} from './service/config.service';
-import {OwnersListComponent} from './owner/owners-list.component';
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
+import { AppComponent } from './app.component';
+import { ConfigService } from './service/config.service';
 
 @NgModule({
-    declarations: [
-        OwnersListComponent,
-        AppComponent,
-    ],
-    imports: [
-        BrowserModule,
-        HttpClientModule,
-    ],
-    providers: [ConfigService],
-    bootstrap: [AppComponent]
+  declarations: [
+    AppComponent,
+  ],
+  imports: [
+    BrowserModule,
+    HttpClientModule,
+  ],
+  providers: [ConfigService],
+  bootstrap: [AppComponent]
 })
-export class AppModule {
-}
+export class AppModule { }

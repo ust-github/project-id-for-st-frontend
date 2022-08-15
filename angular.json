@@ -24,12 +24,9 @@
               "src/assets"
             ],
             "styles": [
-              "./node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
             ],
-            "scripts": [
-              "./node_modules/bootstrap/dist/js/bootstrap.min.js"
-            ]
+            "scripts": []
           },
           "configurations": {
             "production": {
@@ -66,18 +63,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "aps:build"
+            "browserTarget": "project_id_for_st:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "aps:build:production"
+              "browserTarget": "project_id_for_st:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "aps:build"
+            "browserTarget": "project_id_for_st:build"
           }
         },
         "test": {
@@ -124,5 +121,5 @@
         }
       }
     }},
-  "defaultProject": "project_id_for_st"
+  "defaultProject": "aps"
 }

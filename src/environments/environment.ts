@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  basePath: `$https://project_id_for_st-backend-default.dagility.com/`,
+  basePath: `https://project_id_for_st-backend-default.dagility.com/`,
 };
 
 /*
